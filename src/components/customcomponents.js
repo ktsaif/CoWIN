@@ -141,17 +141,17 @@ export const ModalStructure = (props) => {
 
     return (
         <Modal animationType="fade" transparent={true} visible={visible} onRequestClose={hideModel}>
-            <View style={{ flex: 1, flexDirection: 'column', backgroundColor: 'rgba(0, 0, 0, 0.6)'}}>
+            <View style={commonStyles.wraper1}>
                 <TouchableOpacity onPress={hideModel} style={{ flex: 1 }} />
                 <View style={{ flexDirection: 'row' }}>
                     <TouchableOpacity onPress={hideModel} style={{ flex: 1 }} />
-                    <View style={{ alignSelf:'center', backgroundColor: colors.backgroundColor, width: '90%', maxHeight: '80%', borderRadius: dgl * 0.02, justifyContent: 'center', padding: dgl * 0.02 }}>
-                        <View style={{ flexDirection: 'row', width: '100%', justifyContent: 'space-between', borderBottomWidth: 1, borderBottomColor: colors.borderColor1, paddingVertical: dgl * 0.008, paddingHorizontal: dgl * 0.011 }}>
+                    <View style={commonStyles.wraper2}>
+                        <View style={commonStyles.wraper3}>
                             <View style={{ width:'70%'}}>
-                                <Text style={{ color: '#3773E1', fontSize: 14, fontFamily: 'Poppins-SemiBold', paddingVertical: 1 }}>{header}</Text>
+                                <Text style={commonStyles.modalHeader}>{header}</Text>
                             </View>
-                            <TouchableOpacity onPress={hideModel} hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}>
-                                <CloseIcon width={dgl * 0.02} height={dgl * 0.02} fill1={'#3773E1'} fill2={'#ffffff'} />
+                            <TouchableOpacity onPress={hideModel} hitSlop={commonStyles.hitSlop}>
+                                <CloseIcon width={dgl * 0.02} height={dgl * 0.02} fill1={colors.buttonColor} fill2={'#ffffff'} />
                             </TouchableOpacity>
                         </View>
                         {children}

@@ -45,7 +45,13 @@ const StyleSheetFactory = () => {
 
         //loadingModal
         outterWrap: { flex: 1, alignItems: 'center', flexDirection: 'column', justifyContent: 'space-around', backgroundColor: '#rgba(0, 0, 0, 0.5)', zIndex: 1000 },
-        innerWrap: { backgroundColor: colors.backgroundColor, height: 100, width: 100, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'space-around' }
+        innerWrap: { backgroundColor: colors.backgroundColor, height: 100, width: 100, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'space-around' },
+
+        //modalStructure
+        wraper1: { flex: 1, flexDirection: 'column', backgroundColor: 'rgba(0, 0, 0, 0.6)' },
+        wraper2: { alignSelf: 'center', backgroundColor: colors.backgroundColor, width: '90%', maxHeight: '80%', borderRadius: dgl * 0.02, justifyContent: 'center', padding: dgl * 0.02 },
+        wraper3: { flexDirection: 'row', width: '100%', justifyContent: 'space-between', borderBottomWidth: 1, borderBottomColor: colors.borderColor1, paddingVertical: dgl * 0.008, paddingHorizontal: dgl * 0.011 },
+        modalHeader: { color: colors.buttonColor, fontSize: 14, fontFamily: 'Poppins-SemiBold', paddingVertical: 1 }
 
     })
 } 

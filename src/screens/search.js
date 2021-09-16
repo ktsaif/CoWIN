@@ -170,7 +170,7 @@ const Search = ({ ...props }) => {
         navTab: { height: dgl * 0.07, width: '50%', padding: dgl * 0.01, justifyContent: "center", alignItems: "center" },
         screenWrap: { flex: 1, flexDirection: 'column', justifyContent: 'space-between', marginTop: dgl*0.008 },
         footerBox: { backgroundColor: colors.backgroundColor, paddingHorizontal: dgl * 0.035, paddingBottom: dgl * 0.035 },
-        itemBox: {flexDirection: 'row', alignItems: 'center', justifyContent: 'center', padding: dgl * 0.01, borderBottomColor: "#7bdcb5", borderBottomWidth: 0.5 }
+        itemBox: {flexDirection: 'row', alignItems: 'center', justifyContent: 'center', padding: dgl * 0.01, borderBottomColor: colors.borderColor1, borderBottomWidth: 0.5 }
     })
 
     return (
@@ -253,10 +253,10 @@ const Search = ({ ...props }) => {
                                 var name_length = item.state_name.length;
                                 var lastPart = item.state_name.substring(compareIndex + searchText.length, name_length);
                                 return (
-                                    <TouchableOpacity onPress={() => changeState(item)} style={[styles.itemBox,{ backgroundColor: stateId == item.state_id ? '#7bdcb5' : null }]}>
-                                        <Text style={{ fontFamily: stateId == item.state_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: stateId == item.state_id ? '#FFFFFF' : '#152a6e' }} numberOfLines={1}>{firstPart}</Text>
-                                        <Text style={{ fontFamily: stateId == item.state_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: stateId == item.state_id ? '#FFFFFF' : '#152a6e' }} numberOfLines={1}>{searchPart}</Text>
-                                        <Text style={{ fontFamily: stateId == item.state_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: stateId == item.state_id ? '#FFFFFF' : '#152a6e' }} numberOfLines={1}>{lastPart}</Text>
+                                    <TouchableOpacity onPress={() => changeState(item)} style={[styles.itemBox,{ backgroundColor: stateId == item.state_id ? colors.buttonColor : null }]}>
+                                        <Text style={{ fontFamily: stateId == item.state_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: stateId == item.state_id ? '#FFFFFF' : colors.buttonColor }} numberOfLines={1}>{firstPart}</Text>
+                                        <Text style={{ fontFamily: stateId == item.state_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: stateId == item.state_id ? '#FFFFFF' : colors.buttonColor }} numberOfLines={1}>{searchPart}</Text>
+                                        <Text style={{ fontFamily: stateId == item.state_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: stateId == item.state_id ? '#FFFFFF' : colors.buttonColor }} numberOfLines={1}>{lastPart}</Text>
                                     </TouchableOpacity>
                                 )
                             } else {
@@ -270,8 +270,8 @@ const Search = ({ ...props }) => {
                         keyExtractor={(item, index) => index.toString()}
                         renderItem={({ item }) => {
                             return(
-                                <TouchableOpacity onPress={() => changeState(item)} style={[styles.itemBox, { backgroundColor: stateId == item.state_id ? '#7bdcb5' : null }]}>
-                                    <Text style={{ fontFamily: stateId == item.state_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: stateId == item.state_id ? '#FFFFFF' : '#152a6e' }}>{item.state_name}</Text>
+                                <TouchableOpacity onPress={() => changeState(item)} style={[styles.itemBox, { backgroundColor: stateId == item.state_id ? colors.buttonColor : null }]}>
+                                    <Text style={{ fontFamily: stateId == item.state_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: stateId == item.state_id ? '#FFFFFF' : colors.buttonColor }}>{item.state_name}</Text>
                                 </TouchableOpacity>
                             )
                         }
@@ -300,10 +300,10 @@ const Search = ({ ...props }) => {
                                 var name_length = item.district_name.length;
                                 var lastPart = item.district_name.substring(compareIndex + searchText.length, name_length);
                                 return (
-                                    <TouchableOpacity onPress={() => changeDistrict(item)} style={[styles.itemBox, { backgroundColor: stateId == item.state_id ? '#7bdcb5' : null }]}>
-                                        <Text style={{ fontFamily: dctId == item.district_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: dctId == item.district_id ? '#FFFFFF' : '#152a6e' }} numberOfLines={1}>{firstPart}</Text>
-                                        <Text style={{ fontFamily: dctId == item.district_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: dctId == item.district_id ? '#FFFFFF' : '#152a6e' }} numberOfLines={1}>{searchPart}</Text>
-                                        <Text style={{ fontFamily: dctId == item.district_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: dctId == item.district_id ? '#FFFFFF' : '#152a6e' }} numberOfLines={1}>{lastPart}</Text>
+                                    <TouchableOpacity onPress={() => changeDistrict(item)} style={[styles.itemBox, { backgroundColor: dctId == item.district_id ? colors.buttonColor : null }]}>
+                                        <Text style={{ fontFamily: dctId == item.district_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: dctId == item.district_id ? '#FFFFFF' : colors.buttonColor }} numberOfLines={1}>{firstPart}</Text>
+                                        <Text style={{ fontFamily: dctId == item.district_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: dctId == item.district_id ? '#FFFFFF' : colors.buttonColor }} numberOfLines={1}>{searchPart}</Text>
+                                        <Text style={{ fontFamily: dctId == item.district_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: dctId == item.district_id ? '#FFFFFF' : colors.buttonColor }} numberOfLines={1}>{lastPart}</Text>
                                     </TouchableOpacity>
                                 )
                             } else {
@@ -317,8 +317,8 @@ const Search = ({ ...props }) => {
                         keyExtractor={(item, index) => index.toString()}
                         renderItem={({ item }) => {
                             return (
-                                <TouchableOpacity onPress={() => changeDistrict(item)} style={[styles.itemBox, { backgroundColor: stateId == item.state_id ? '#7bdcb5' : null }]}>
-                                    <Text style={{ fontFamily: dctId == item.district_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: dctId == item.district_id ? '#FFFFFF' : '#152a6e' }}>{item.district_name}</Text>
+                                <TouchableOpacity onPress={() => changeDistrict(item)} style={[styles.itemBox, { backgroundColor: dctId == item.district_id ? colors.buttonColor : null }]}>
+                                    <Text style={{ fontFamily: dctId == item.district_id ? 'Poppins-Bold' : 'Poppins-Regular', fontSize: dgl * 0.015, color: dctId == item.district_id ? '#FFFFFF' : colors.buttonColor }}>{item.district_name}</Text>
                                 </TouchableOpacity>
                             )
                         }
