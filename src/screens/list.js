@@ -207,7 +207,7 @@ const List = ({ ...props }) => {
 
     const toggleSwitch = () => {
         Toast.show('Dose filter disabled. 😞')
-        setSwitchStatus(previousState => !previousState);
+        setSwitchStatus(switchStatus => !switchStatus);
     }
 
     const NoDataView = () => {
