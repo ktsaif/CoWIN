@@ -19,7 +19,6 @@ const List = ({ ...props }) => {
     const [switchStatus, setSwitchStatus] = useState(false);
     const [isRefreshing, setIsRefreshing] = useState(false);
 
-   
     useEffect(() => {
         getSlotList();
     }, []);
@@ -86,7 +85,6 @@ const List = ({ ...props }) => {
             setLoading(false)
         }
     }
-
 
     const goBackFn = () => {
         props.navigation.goBack()

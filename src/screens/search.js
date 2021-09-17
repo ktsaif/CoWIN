@@ -8,8 +8,8 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 const dgl = screenDiagonal()
 const commonStyles = StyleSheetFactory()
-
 const Search = ({ ...props }) => {
+
     const [loading, setLoading] = useState(true);
     const [isRefreshing, setIsRefreshing] = useState(false);
     const [activeTitle, setActiveTitle] = useState('Search by pincode');
@@ -18,13 +18,11 @@ const Search = ({ ...props }) => {
     const [stateId, setStateId] = useState();
     const [dctName, setDctName] = useState();
     const [dctId, setDctId] = useState();
-
     const [searchText, setSearchText] = useState('');
     const [stateArray, setStateArray] = useState([]);
     const [dctArray, setDctArray] = useState([]);
     const [modalState, setModalState] = useState(false);
     const [modalDct, setModalDct] = useState(false);
-
 
     useEffect(() => {
         getSatates();
@@ -36,7 +34,6 @@ const Search = ({ ...props }) => {
             url: 'https://cdndemo-api.co-vin.in/api/v2/admin/location/states',
             method: 'GET',
         }
-
         var resultMain = await Middleware(value) || [];
         if (resultMain) {
             if (resultMain.states){
@@ -56,7 +53,6 @@ const Search = ({ ...props }) => {
             method: 'GET',
             extraArg: id
         }
-
         var resultMain = await Middleware(value) || [];
         if (resultMain) {
             if (resultMain.districts){
@@ -162,7 +158,6 @@ const Search = ({ ...props }) => {
     return (
         <>
             <Header menu={true} title={'Change location'} goBack={goBackFn} loading={loading}/>
-
             <View style={{}}>
                 <FlatList
                     data={searchTypes}
@@ -173,7 +168,6 @@ const Search = ({ ...props }) => {
                     renderItem={renderSearchNavbar}
                     />
             </View>
-
             <ScrollView style={{backgroundColor:colors.backgroundColor}} showsVerticalScrollIndicator={false} refreshControl={<RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} />}>
                 <View style={commonStyles.appcontainer}>
                     {activeTitle == 'Search by pincode' ? 
@@ -211,7 +205,6 @@ const Search = ({ ...props }) => {
                     text={'Search'}
                 />
             </View>
-
             {/* state modal */}
             <ModalStructure visible={modalState} hideModel={() => setModalState(false)} header={'Select state'}>
                 <CustomTextInput
@@ -258,7 +251,6 @@ const Search = ({ ...props }) => {
                     />
                 }
             </ModalStructure>
-
             {/* district modal */}
             <ModalStructure visible={modalDct} hideModel={() => setModalDct(false)} header={'Select district'}>
                 <CustomTextInput
