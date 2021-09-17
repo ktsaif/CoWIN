@@ -1,5 +1,5 @@
 # CoWIN
-gir colne https://github.com/ktsaif/CoWIN.git
+git colne https://github.com/ktsaif/CoWIN.git
 
 cd CoWIN
 
