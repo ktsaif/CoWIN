@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, StatusBar,KeyboardAvoidingView,Platform} from 'react-native';
+import { View, Text, StyleSheet, StatusBar,Image} from 'react-native';
 import { screenDiagonal, CustomTextInput, CommonButton } from '../components/customcomponents'
 import { StyleSheetFactory, colors } from '../components/stylesheetfactory'
-import { LoginBg } from '../assets/svg'
 import Toast from 'react-native-simple-toast';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -34,23 +33,24 @@ const Login = ({ ...props }) => {
 
     return (
         <>  
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={commonStyles.appcontainer}>
-                    <StatusBar translucent backgroundColor='transparent' barStyle='dark-content' />
+            <StatusBar translucent backgroundColor='transparent' barStyle='dark-content' />
+            <View style={{flex:1,flexDirection:'column', justifyContent:'space-between', backgroundColor: colors.backgroundColor}}>
+                {/* <ScrollView showsVerticalScrollIndicator={false}> */}
+                <View style={{backgroundColor: colors.backgroundColor, padding: dgl * 0.035}}>
                     <View style={styles.titleContainer}>
                         <Text style={styles.title1}>Welcome</Text>
                         <Text style={styles.title2}>vaccinator & verifier</Text>
                     </View>
-                    <CustomTextInput 
+                    <CustomTextInput
                         label={'Mobile Number *'}
                         placeholder={'Mobile Number'}
                         onChangeText={(text) => setMobileNumber(text)}
                         value={mobileNumber}
                     />
-                    <CustomTextInput 
+                    <CustomTextInput
                         label={'Password *'}
                         placeholder={'Password'}
-                        secure ={true}
+                        secure={true}
                         secureTextEntry={securePass}
                         handlePasswordSecure={handlePasswordSecure}
                         onChangeText={(text) => setPassword(text)}
@@ -61,13 +61,11 @@ const Login = ({ ...props }) => {
                         text={'Log in'}
                     />
                 </View>
-                <KeyboardAvoidingView
-                    behavior={Platform.OS === "ios" ? "padding" : "height"}
-                    style={styles.imageWrap}
-                >
-                    <LoginBg width={'100%'}/>
-                </KeyboardAvoidingView>
-            </ScrollView>
+                <View style={{}}>
+                <Image source={require('../assets/Group.png')} style={{ resizeMode: 'cover', backgroundColor: colors.backgroundColor, alignSelf: "flex-end", width: '100%' }} resizeMode={'stretch'}></Image> 
+                {/* </ScrollView> */}
+                </View>
+            </View>
         </>
 
     );
