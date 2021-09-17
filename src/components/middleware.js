@@ -2,8 +2,7 @@ import { OfflineNotice } from './customcomponents'
 import Toast from 'react-native-simple-toast';
 
 async function Middleware(val) {
-    var headers = {};
-
+    
     var online = await OfflineNotice();
     if (!online) {
         Toast.show('Network connection failed, check the internet connectivity', Toast.LONG);

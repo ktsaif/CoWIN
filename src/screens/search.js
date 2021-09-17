@@ -41,19 +41,11 @@ const Search = ({ ...props }) => {
         if (resultMain) {
             if (resultMain.states){
                 setStateArray(resultMain.states)
+            } else {
+                Toast.show('Somthing went wrong, try again later!')
             }
             setLoading(false)
             setIsRefreshing(false)
-        } else {
-            if (err) {
-                setLoading(false)
-                setIsRefreshing(false)
-                Toast.show('Somthing went wrong, try again later!')
-            } else {
-                setLoading(false)
-                setIsRefreshing(false)
-                Toast.show('Somthing went wrong, try again later!')
-            }
         }
     }
 
@@ -69,17 +61,11 @@ const Search = ({ ...props }) => {
         if (resultMain) {
             if (resultMain.districts){
                 setDctArray(resultMain.districts)
+            } else {
+                Toast.show('Somthing went wrong, try again later!')
             }
             setLoading(false)
-        } else {
-            if (err) {
-                setLoading(false)
-                Toast.show('Somthing went wrong, try again later!')
-            } else {
-                setLoading(false)
-                Toast.show('Somthing went wrong, try again later!')
-            }
-        }
+        } 
     }
 
     const goBackFn = () => {
@@ -220,17 +206,10 @@ const Search = ({ ...props }) => {
                 </View> 
             </ScrollView>
             <View style={styles.footerBox}>
-                {activeTitle == 'Search by pincode' ? 
-                    <CommonButton
-                        onPress={() => handleSearch('pincode')}
-                        text={'Search'}
-                    />
-                :
-                    <CommonButton
-                        onPress={() => handleSearch('district')}
-                        text={'Search'}
-                    />
-                }
+                <CommonButton
+                    onPress={() => handleSearch(activeTitle == 'Search by pincode' ? 'pincode' : 'district' )}
+                    text={'Search'}
+                />
             </View>
 
             {/* state modal */}
@@ -327,7 +306,6 @@ const Search = ({ ...props }) => {
                 }
             </ModalStructure>
         </>
-
     );
 }
 

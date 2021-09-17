@@ -34,7 +34,7 @@ const Login = ({ ...props }) => {
 
     return (
         <>  
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={commonStyles.appcontainer}>
                     <StatusBar translucent backgroundColor='transparent' barStyle='dark-content' />
                     <View style={styles.titleContainer}>

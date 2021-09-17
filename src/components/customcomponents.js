@@ -1,10 +1,9 @@
 import React, { } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StatusBar, ActivityIndicator, Modal, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StatusBar, ActivityIndicator, Modal } from 'react-native';
 import { Dimensions } from 'react-native';
 import NetInfo from "@react-native-community/netinfo";
 import { StyleSheetFactory, colors } from './stylesheetfactory'
 import { EyeIcon, Menu, BackArrow, CloseIcon } from '../assets/svg'
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const commonStyles = StyleSheetFactory()
 const { width, height } = Dimensions.get('window');
