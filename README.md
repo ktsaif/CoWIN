@@ -12,7 +12,7 @@ npm start //start bundler
 react-native run-android //run project
 
 
-node v v12+
+node v 12+
 
 react-native-cli v 2.0.1
 
